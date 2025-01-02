@@ -22,6 +22,9 @@
       <ComponentEight v-show="visibleComponent === 7" />
       <ComponentNine v-show="visibleComponent === 8" />
       <ComponentTen v-show="visibleComponent === 9" />
+      <ComponentEleven v-show="visibleComponent === 10" />
+      <ComponentTwelve v-show="visibleComponent === 11" />
+      <ComponentThirteen v-show="visibleComponent === 12" />
     </div>
   </div>
 </template>
@@ -37,6 +40,9 @@ import ComponentSeven from '~/components/IslemRehberi.vue';
 import ComponentEight from '~/components/Yardim.vue';
 import ComponentNine from '~/components/Sepet.vue';
 import ComponentTen from '~/components/Dergi.vue';
+import ComponentEleven from '~/components/ComponentEleven.vue'; // Yeni eklendi
+import ComponentTwelve from '~/components/ComponentTwelve.vue'; // Yeni eklendi
+import ComponentThirteen from '~/components/ComponentThirteen.vue'; // Yeni eklendi
 
 export default {
   components: {
@@ -50,6 +56,9 @@ export default {
     ComponentEight,
     ComponentNine,
     ComponentTen,
+    ComponentEleven, // Yeni eklendi
+    ComponentTwelve, // Yeni eklendi
+    ComponentThirteen, // Yeni eklendi
   },
   data() {
     return {
@@ -65,6 +74,9 @@ export default {
         { name: 'Component Eight' },
         { name: 'Component Nine' },
         { name: 'Component Ten' },
+        { name: 'Component Eleven' }, // Yeni eklendi
+        { name: 'Component Twelve' }, // Yeni eklendi
+        { name: 'Component Thirteen' }, // Yeni eklendi
       ],
     };
   },
