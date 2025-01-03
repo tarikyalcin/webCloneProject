@@ -22,17 +22,17 @@
           <div class="product-details">
             <div class="separator"></div>
             <div class="product-info">
-              <div class="info-item"><strong>Ürün Kodu:</strong> 40227070</div>
+              <div class="info-item"><strong>Ürün Kodu:</strong> 39766505</div>
               <div class="info-item"><strong>Stokta:</strong> 1 adet var</div>
-              <div class="info-item"><strong>Çeviren:</strong> SELİM ÖZGÜL</div>
-              <div class="info-item"><strong>Hazırlayan:</strong> Yayınevi: AGORA KİTAPLIĞI, 2011</div>
-              <div class="info-item"><strong>Yayın Yeri:</strong> İSTANBUL</div>
+              <div class="info-item"><strong>Çeviren:</strong> </div>
+              <div class="info-item"><strong>Hazırlayan:</strong> Yayınevi: Sola Unitas</div>
+              <div class="info-item"><strong>Yayın Yeri:</strong> </div>
               <div class="info-item"><strong>Dili:</strong> Türkçe</div>
               <div class="info-item"><strong>Cildi:</strong> Karton Kapaklı</div>
               <div class="info-item"><strong>ISBN NO:</strong> -</div>
               <div class="info-item"><strong>Özellik:</strong> Birinci Baskı</div>
-              <div class="info-item"><strong>Durum:</strong> İkinci El</div>
-              <div class="info-item"><strong>Kondisyon:</strong> Yeni Gibi</div>
+              <div class="info-item"><strong>Durum:</strong> Yeni</div>
+              <div class="info-item"><strong>Kondisyon:</strong> </div>
               <div class="info-item"><strong>Kargo:</strong> Alıcıya Ait</div>
             </div>
           </div>
@@ -47,11 +47,11 @@
         <!-- Blog ve Diğer Linkler -->
         <div class="book-blog">
           <div class="separator"></div>
-          <p><strong>Retro Kitap</strong><br />3898 işlemde %99 başarı</p>
+          <p><strong>Heimat Kitap</strong><br />3898 işlemde %99 başarı</p>
           <div class="separator"></div>
-          <p>Retro Kitap tüm Türkiye'ye Kolay Gelsin Kargo & NadirKitap anlaşması ile gönderim yapmaktadır;</p>
-          <p>Tek kitap kargo ücreti: 99.00 TL(KDV dahil)</p>
-          <p>2 ve daha fazla kitap: 109.00 TL (Adet limiti olmaksızın, KDV dahil)</p>
+          <p>Heimat Kitap tüm Türkiye'ye Kolay Gelsin Kargo & NadirKitap anlaşması ile gönderim yapmaktadır;</p>
+          <p>Tek kitap kargo ücreti: 119.00 TL(KDV dahil)</p>
+          <p>2 ve daha fazla kitap: 129.00 TL (Adet limiti olmaksızın, KDV dahil)</p>
           <p><a href="#">Daha fazla bilgi</a></p>
           <div class="separator"></div>
           <p>📚 <a href="#">Tüm Kitaplarına Gözat</a></p>
@@ -80,7 +80,7 @@
     id: 2,
     name: 'Bilişsel Davranış Terapisinde Bilinçli Uygulama',
     author: 'James F. Boswell',
-    price: '459₺',
+    price: '439₺',
     image: '/images/books/BilişselDavranışlarTerapisindeBilinçliUygulama.jpg',
   })
   </script>
