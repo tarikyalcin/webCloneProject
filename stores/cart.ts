@@ -1,22 +1,48 @@
 import { defineStore } from 'pinia';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { db } from '~/plugins/firebase';
 
-// Sepet mağazasını tanımlıyoruz
 export const useCartStore = defineStore('cart', {
-  // State: Sepet verilerini burada tutuyoruz
   state: () => ({
-    cartItems: [] as Array<{ title: string; price: string; seller: string }>, // Sepet öğelerini tutan liste
+    items: [],
+    userId: null
   }),
 
-  // Actions: Sepete ekleme ve çıkarma işlemleri
   actions: {
-    // Sepete öğe eklemek için fonksiyon
-    addItemToCart(item: { title: string; price: string; seller: string }) {
-      this.cartItems.push(item); // Yeni öğeyi sepete ekle
+    addItemToCart(item) {
+      const newItem = {
+        ...item,
+        quantity: 1
+      }
+      this.items.push(newItem)
+      this.syncWithFirebase()
     },
 
-    // Sepetten öğe kaldırmak için fonksiyon
-    removeItemFromCart(index: number) {
-      this.cartItems.splice(index, 1); // Belirtilen indisteki öğeyi çıkar
+    updateItemQuantity(item) {
+      const index = this.items.findIndex(i => i.id === item.id)
+      if (index !== -1) {
+        this.items[index].quantity = item.quantity
+        this.syncWithFirebase()
+      }
     },
+
+    removeItemFromCart(index) {
+      this.items.splice(index, 1)
+      this.syncWithFirebase()
+    },
+
+    async syncWithFirebase() {
+      if (this.userId) {
+        try {
+          await setDoc(doc(db, 'users', this.userId, 'cart', 'current'), {
+            items: this.items
+          })
+        } catch (error) {
+          console.error('Cart sync error:', error)
+        }
+      }
+    }
   },
-});
+
+  persist: true
+})

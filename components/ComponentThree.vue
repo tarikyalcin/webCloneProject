@@ -11,15 +11,10 @@
             <li><a href="#">Edebiyat</a></li>
             <li><a href="#">Ekonomi & İş Dünyası</a></li>
             <li><a href="#">Felsefe & Düşünce</a></li>
-            <li><a href="#">Hukuk</a></li>
-            <li><a href="#">Osmanlıca</a></li>
             <li><a href="#">Referans & Başvuru</a></li>
             <li><a href="#">Sağlık</a></li>
             <li><a href="#">Sanat</a></li>
-            <li><a href="#">Sınav ve Ders Kitapları</a></li>
-            <li><a href="#">Spor</a></li>
             <li><a href="#">Tarih</a></li>
-            <li><a href="#">Toplum & Siyaset</a></li>
             <li><a href="#">Diğer & Çeşitli</a></li>
           </ul>
         </li>
@@ -72,12 +67,12 @@
   }
   
   .sub-menu > li {
-    color: #606060; 
+    color: #606060;
     font-size: 0.9em;
     font-weight: normal;
     margin-bottom: 5px;
     display: flex;
-    align-items: center; 
+    align-items: center;
   }
   
   .sub-menu > li::before {
@@ -94,6 +89,34 @@
   
   .sub-menu > li a:hover {
     text-decoration: underline;
+  }
+  
+  .kitaplar-menu {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .kitaplar-menu h2 {
+    color: #931818;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .menu-item {
+    padding: 8px 0;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  
+  .menu-item:hover {
+    color: #931818;
+    background: #f9f9f9;
   }
   </style>
   

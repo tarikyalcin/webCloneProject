@@ -1,0 +1,29 @@
+/* Mobil görünüm için */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .left-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .product-item {
+    grid-template-columns: 1fr;
+  }
+
+  .search-section {
+    flex-direction: column;
+  }
+}
+
+/* Tablet görünüm için */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-content {
+    padding: 0 20px;
+  }
+} 

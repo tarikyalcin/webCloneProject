@@ -3,16 +3,15 @@
     <h1 class="title">📚 Son Eklenenler</h1>
     <div class="book-grid">
       <div v-for="book in books" :key="book.id" class="book-item">
-        <!-- Tıklanabilir resim -->
-        <router-link :to="`/book/${book.id}`">
+        <NuxtLink :to="`/book/${book.id}`">
           <img :src="book.image" alt="Book Image" class="book-image" />
-        </router-link>
-        <div class="book-info">
-          <h3>{{ truncatedTitle(book.name) }}</h3> 
-          <p class="author-price">
-            <span class="author">{{ truncatedAuthor(book.author) }}</span> - <span class="price">{{ book.price }}</span>
-          </p>
-        </div>
+          <div class="book-info">
+            <h3>{{ truncatedTitle(book.name) }}</h3> 
+            <p class="author-price">
+              <span class="author">{{ truncatedAuthor(book.author) }}</span> - <span class="price">{{ book.price }}</span>
+            </p>
+          </div>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -55,11 +54,13 @@ const truncatedAuthor = (author: string) => {
 
 <style scoped>
 .container {
+  margin-top: -30px;
   background-color: #faf7ec;
   padding: 10px;
   border-radius: 8px;
   max-width: 1000px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .title {
@@ -112,5 +113,11 @@ const truncatedAuthor = (author: string) => {
 
 .price {
   color: black; 
+}
+
+.book-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 </style>

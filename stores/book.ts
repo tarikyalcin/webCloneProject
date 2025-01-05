@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
-import { db } from '../plugins/firebase'; // firebase.js dosyasını import ettik
 import { collection, getDocs } from 'firebase/firestore';
+import { db } from '~/plugins/firebase';
 
 // Kitap mağazasını tanımlıyoruz
 export const useBookStore = defineStore('book', {

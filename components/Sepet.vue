@@ -12,105 +12,186 @@ tamam boşver şimdi sana 9. ve 10. component i atacağım ve senden sadece bunl
       <button class="ana-sayfa" @click="goToHomePage">Ana Sayfaya Dön</button>
     </div>
 
-    <div v-else class="sepet-listesi">
-      <div class="sepet-item" v-for="(item, index) in cartItems" :key="index">
-        <h3 class="item-title">{{ item.title }}</h3>
-        <p class="item-price">{{ item.price }}</p>
-        <p class="item-seller">Satıcı: {{ item.seller }}</p>
-        <button class="remove-button" @click="removeFromCart(index)">Kaldır</button>
+    <div v-else>
+      <!-- Satıcıya göre gruplandırılmış ürünler -->
+      <div v-for="(group, seller) in groupedItems" :key="seller" class="seller-group">
+        <div class="seller-header">
+          <h3>Satıcı: {{ seller }}</h3>
+          <p class="kargo-info">Kargo Ücreti: {{ calculateShipping(group) }} TL</p>
+        </div>
+
+        <div class="sepet-listesi">
+          <div v-for="(item, index) in group" :key="index" class="sepet-item">
+            <div class="item-image">
+              <img :src="item.image" :alt="item.title" />
+            </div>
+            <div class="item-details">
+              <h3 class="item-title">{{ item.title }}</h3>
+              <p class="item-seller">Satıcı: {{ item.seller }}</p>
+              <div class="item-quantity">
+                <label>Adet:</label>
+                <select v-model="item.quantity" @change="updateQuantity(item)">
+                  <option v-for="n in 10" :key="n" :value="n">{{ n }}</option>
+                </select>
+              </div>
+              <p class="item-price">{{ formatPrice(item.price * item.quantity) }} TL</p>
+            </div>
+            <button class="remove-button" @click="removeFromCart(index)">Sepetten Çıkar</button>
+          </div>
+        </div>
+
+        <div class="group-total">
+          <p>Ara Toplam: {{ calculateGroupTotal(group) }} TL</p>
+          <p>Kargo: {{ calculateShipping(group) }} TL</p>
+        </div>
+      </div>
+
+      <!-- Genel Toplam -->
+      <div class="cart-total">
+        <div class="total-line">
+          <span>Toplam Ürün:</span>
+          <span>{{ calculateSubTotal() }} TL</span>
+        </div>
+        <div class="total-line">
+          <span>Toplam Kargo:</span>
+          <span>{{ calculateTotalShipping() }} TL</span>
+        </div>
+        <div class="total-line grand-total">
+          <span>Genel Toplam:</span>
+          <span>{{ calculateGrandTotal() }} TL</span>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import { useCartStore } from '@/stores/cart';
+<script setup>
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { useCartStore } from '@/stores/cart'
 
-export default defineComponent({
-  name: 'ComponentNine',
-  setup() {
-    const cartStore = useCartStore();
+const router = useRouter()
+const cartStore = useCartStore()
 
-    const cartItems = cartStore.cartItems;
+const cartItems = computed(() => cartStore.items)
 
-    const removeFromCart = (index: number) => {
-      cartStore.removeItemFromCart(index);
-    };
+// Satıcıya göre ürünleri grupla
+const groupedItems = computed(() => {
+  return cartItems.value.reduce((groups, item) => {
+    const seller = item.seller
+    if (!groups[seller]) {
+      groups[seller] = []
+    }
+    groups[seller].push(item)
+    return groups
+  }, {})
+})
 
-    const goToHomePage = () => {
-      // Ana sayfaya yönlendirme işlemi
-      window.location.href = '/';
-    };
+const formatPrice = (price) => {
+  return Number(price).toFixed(2)
+}
 
-    return { cartItems, removeFromCart, goToHomePage };
-  },
-});
+const calculateShipping = (items) => {
+  // Her satıcı için sabit kargo ücreti (örnek)
+  return 99.00
+}
+
+const calculateGroupTotal = (items) => {
+  return formatPrice(items.reduce((total, item) => {
+    return total + (parseFloat(item.price) * item.quantity)
+  }, 0))
+}
+
+const calculateSubTotal = () => {
+  return formatPrice(cartItems.value.reduce((total, item) => {
+    return total + (parseFloat(item.price) * item.quantity)
+  }, 0))
+}
+
+const calculateTotalShipping = () => {
+  // Her satıcı için ayrı kargo ücreti
+  return formatPrice(Object.keys(groupedItems.value).length * 99.00)
+}
+
+const calculateGrandTotal = () => {
+  const subtotal = parseFloat(calculateSubTotal())
+  const shipping = parseFloat(calculateTotalShipping())
+  return formatPrice(subtotal + shipping)
+}
+
+const updateQuantity = (item) => {
+  cartStore.updateItemQuantity(item)
+}
+
+const removeFromCart = (index) => {
+  cartStore.removeItemFromCart(index)
+}
+
+const goToHomePage = () => {
+  router.push('/')
+}
 </script>
 
 <style scoped>
-.baslik {
-  margin-left: 100px;
-  font-size: 20px;
+/* Mevcut stiller korunacak, yeni stiller eklenecek */
+.seller-group {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-.nine .sepet-box {
+.seller-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.kargo-info {
+  color: #666;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.item-quantity select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.group-total {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  text-align: right;
+}
+
+.cart-total {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
   margin-top: 20px;
 }
 
-.nine .ana-sayfa {
-  padding: 10px 20px;
-  background-color: #931818;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.nine .sepet-listesi {
+.total-line {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
+  justify-content: space-between;
+  padding: 10px 0;
 }
 
-.nine .sepet-item {
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.nine .item-title {
-  font-size: 16px;
+.grand-total {
+  font-size: 1.2em;
   font-weight: bold;
-  color: #146eb2;
-}
-
-.nine .item-price {
-  font-size: 14px;
-  color: #333;
-}
-
-.nine .item-seller {
-  font-size: 12px;
-  color: #800000;
-}
-
-.nine .remove-button {
+  color: #931818;
+  border-top: 2px solid #eee;
   margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #931818;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+  padding-top: 10px;
 }
 </style>

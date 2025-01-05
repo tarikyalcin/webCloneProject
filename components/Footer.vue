@@ -14,13 +14,13 @@
             <hr class="footer-divider" />
             <div class="app-links">
               <div class="app-link">
-                <img src="/images/apple.png" alt="Apple Logo" />
+                <img src="/images/footer/apple.png" alt="Apple Logo" />
               </div>
               <div class="app-link">
-                <img src="/images/google.png" alt="Google Play Logo" />
+                <img src="/images/footer/google.png" alt="Google Play Logo" />
               </div>
               <div class="app-link">
-                <img src="/images/huawei.jpg" alt="Huawei Logo" />
+                <img src="/images/footer/huawei.jpg" alt="Huawei Logo" />
               </div>
             </div>
           </div>
@@ -53,12 +53,12 @@
                     <span>🌍 EN</span>    
               
               <div class="social-icons">
-                <a href="#"><img src="/images/x.png" alt="Twitter Logo" /></a>
-                <a href="#"><img src="/images/insta.png" alt="Instagram Logo" /></a>
-                <a href="#"><img src="/images/face.png" alt="Facebook Logo" /></a>
+                <a href="#"><img src="/images/footer/x.png" alt="Twitter Logo" /></a>
+                <a href="#"><img src="/images/footer/insta.png" alt="Instagram Logo" /></a>
+                <a href="#"><img src="/images/footer/face.png" alt="Facebook Logo" /></a>
               </div>
               <div class="small-image">
-                <img src="/images/footer_logo_troy.png" alt="Küçük Görsel" />
+                <img src="/images/footer/footer_logo_troy.png" alt="Küçük Görsel" />
               </div>
             </div>
           </div>
