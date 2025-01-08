@@ -31,13 +31,17 @@ export const useBookStore = defineStore('book', {
 
         // querySnapshot.docs: Tüm dökümanları içeren dizi
         // map() ile her dökümanı istediğimiz formata dönüştürüyoruz
-        const booksArray = querySnapshot.docs.map(doc => ({
-          id: doc.id,           // Dökümanın ID'si
-          name: doc.data().name || '',        // Kitap adı
-          author: doc.data().author || '',    // Yazar
-          price: doc.data().price || '',      // Fiyat
-          image: doc.data().image || '',      // Resim URL'i
-        }));
+        const booksArray = querySnapshot.docs.map(doc => {
+          const data = doc.data();
+          return {
+            id: doc.id,
+            name: data.name || '',
+            author: data.author || '',
+            price: data.price || '',
+            // Resim URL'sini Firebase Storage'dan alınan formatta güncelle
+            image: data.image ? `https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.appspot.com/o/${encodeURIComponent(data.image)}?alt=media` : '',
+          };
+        });
 
         // this.books ile state'i güncelliyoruz
         // Bu güncelleme reactive olduğu için,

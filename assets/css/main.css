@@ -1,0 +1,19 @@
+/* Reset ve genel stiller */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+/* Genel container stil */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+} 
