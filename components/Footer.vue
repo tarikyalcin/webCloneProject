@@ -14,13 +14,13 @@
             <hr class="footer-divider" />
             <div class="app-links">
               <div class="app-link">
-                <img src="/images/footer/apple.png" alt="Apple Logo" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/footer%2Fapple.png?alt=media&token=5f2d0259-87fa-4cca-a675-e272fb980f52" alt="Apple Logo" />
               </div>
               <div class="app-link">
-                <img src="/images/footer/google.png" alt="Google Play Logo" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/footer%2Fgoogle.png?alt=media&token=79246a1a-4c1d-480d-b250-3ec03acb9612" alt="Google Play Logo" />
               </div>
               <div class="app-link">
-                <img src="/images/footer/huawei.jpg" alt="Huawei Logo" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/footer%2Fhuawei.jpg?alt=media&token=0eb1aa88-4414-4dff-93fc-11938475da07" alt="Huawei Logo" />
               </div>
             </div>
           </div>
@@ -53,12 +53,12 @@
                     <span>🌍 EN</span>    
               
               <div class="social-icons">
-                <a href="#"><img src="/images/footer/x.png" alt="Twitter Logo" /></a>
-                <a href="#"><img src="/images/footer/insta.png" alt="Instagram Logo" /></a>
-                <a href="#"><img src="/images/footer/face.png" alt="Facebook Logo" /></a>
+                <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/footer%2Fx.png?alt=media&token=cfc23e3a-f623-440a-80ec-9eee919beb44" alt="Twitter Logo" /></a>
+                <a href="#"><img src="https://console.firebase.google.com/u/0/project/webfinal-714a8/storage/webfinal-714a8.firebasestorage.app/files/~2Ffooter" alt="Instagram " /></a>
+                <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/footer%2Fface.png?alt=media&token=b8e7bf48-d851-42ba-a0f2-add7d3238f09" alt="Facebook Logo" /></a>
               </div>
               <div class="small-image">
-                <img src="/images/footer/footer_logo_troy.png" alt="Küçük Görsel" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/footer%2Ffooter_logo_troy.png?alt=media&token=211ca6d5-20f6-4db2-ad90-c299eb2b2cf0" alt="Küçük Görsel" />
               </div>
             </div>
           </div>

@@ -44,7 +44,7 @@
 
     <!-- Kampanya banner -->
     <div class="campaign-banner">
-      <img src="/images/slider/kampanyalar.jpg" alt="Kampanyalar" />
+      <img src="https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/slider%2Fkampanyalar.jpg?alt=media&token=0104ee52-7b3e-4163-b68b-80b804425e75" alt="Kampanyalar" />
     </div>
   </div>
 </template>
@@ -155,14 +155,14 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const images = ref([
-  '/images/slider/image1.jpg',
-  '/images/slider/image2.jpg',
-  '/images/slider/image3.jpg',
-  '/images/slider/image4.jpg',
-  '/images/slider/image5.jpg',
-  '/images/slider/image6.jpg',
-  '/images/slider/image7.jpg',
-  '/images/slider/image8.jpg'
+  'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/slider%2Fimage1.jpg?alt=media&token=e20a5291-e7af-4b0a-9859-1ce7bfb6c296',
+  'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/slider%2Fimage2.jpg?alt=media&token=baa0c231-0cf3-4c96-93ef-1e6eb905ea7f',
+  'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/slider%2Fimage3.jpg?alt=media&token=f4f5ded9-bcc3-428b-9cc9-e94f6e51fa5a',
+  'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/slider%2Fimage4.jpg?alt=media&token=9dbe649a-46e7-4562-95f4-321f0731c983',
+  'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/slider%2Fimage5.jpg?alt=media&token=cf900a4d-1537-42a1-bdda-d1278d473494',
+  'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/slider%2Fimage6.jpg?alt=media&token=7940e9b4-26fc-48d9-b87a-5372784eea91',
+  'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/slider%2Fimage7.jpg?alt=media&token=53739a04-43cd-4274-854b-b1264e7d8e47',
+  'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/slider%2Fimage8.jpg?alt=media&token=82b75e77-23f5-4b05-9cf7-283139227634'
 ])
 
 const currentIndex = ref(0)

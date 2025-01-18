@@ -29,18 +29,18 @@ interface Book {
 }
 
 const books = ref<Book[]>([
-  { id: 1, name: 'Avrasyada Şamanlar', author: 'MIHALY HOPPAL', price: '90,00 ₺', image: '/images/books/AvrasyadaŞamanlar.jpg' },
-  { id: 2, name: 'Bilişsel Davranış Terapisinde Bilinçli Uygulama', author: 'James F. Boswell', price: '459₺', image: '/images/books/BilişselDavranışlarTerapisindeBilinçliUygulama.jpg' },
-  { id: 3, name: "BİRİNCİ DÜNYA SAVAŞI'NDA İSTANBUL'A YAPILAN HAVA SALDIRILARI", author: 'EMİN KURT - MESUT GÜVENBAŞ', price: '64₺', image: '/images/books/BirinciDünyaSavaşındaİstanbulaYapılanHavaSaldırıları.jpg' },
-  { id: 4, name: 'DENİZLER ALTINDA YİRMİ BİN FERSAH', author: 'Jules Verne', price: '70₺', image: '/images/books/DenizlerAltındaYirmiBinFersah.jpg' },
-  { id: 5, name: 'GÖNÜL SOHBETLERİ GÜLDESTESİ IV', author: 'FEYZİ HALICI, H. YURDABAK, A. SATOĞLU', price: '5₺', image: '/images/books/GönülSohbetleri.jpg' },
-  { id: 6, name: 'Hükümdar ve Siyaset Kitabı', author: 'İbn Abdirabbih', price: '20₺', image: '/images/books/HükümdarVeSiyaset.jpg' },
-  { id: 7, name: 'SAKIN BÜYÜME ÇOCUK', author: 'MUHANMET RECEPARAR', price: '40₺', image: '/images/books/SakınBüyümeÇocuk.jpg' },
-  { id: 8, name: 'TARİHİ GERÇEKLER IŞIĞINDA BELGELERLE MUSTAFA KEMAL ATATÜRK', author: 'YUSUF KOÇ - ALİ KOÇ', price: '37₺', image: '/images/books/TarihiGerçeklerIşığındaMustafaKemalAtatürk.jpg' },
-  { id: 9, name: 'THE ICE ROSE', author: 'EUROPE AFS', price: '14₺', image: '/images/books/TheIceRose.jpg' },
-  { id: 10, name: 'TÜRKİYE TÜRKÇESİ GRAMERİ ŞEKİL BİLGİSİ ', author: 'ZEYNEP KORKMAZ', price: '65₺', image: '/images/books/TürkiyeTürkçesiGrameriŞekilBilgisi.jpg' },
-  { id: 11, name: 'Yalnız Adamın Hayalleri', author: 'J.J RUSSEAU', price: '15₺', image: '/images/books/YalnızAdamınHayalleri.jpg' },
-  { id: 12, name: 'YAZILAR YAZGILAR GİBİDİR SİLİNMEZ', author: 'TÜRKER GÖKSEL', price: '4,50₺', image: '/images/books/YazılarYazgılarGibidirSilinmez.jpg' }
+  { id: 1, name: 'Avrasyada Şamanlar', author: 'MIHALY HOPPAL', price: '90,00 ₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FAvrasyadaŞamanlar.jpg?alt=media&token=0b3998f4-1960-4020-85df-a744f1d899c6' },
+  { id: 2, name: 'Bilişsel Davranış Terapisinde Bilinçli Uygulama', author: 'James F. Boswell', price: '459₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FBilişselDavranışlarTerapisindeBilinçliUygulama.jpg?alt=media&token=e8952a31-7223-416e-9d2c-7650ca20e4ac' },
+  { id: 3, name: "BİRİNCİ DÜNYA SAVAŞI'NDA İSTANBUL'A YAPILAN HAVA SALDIRILARI", author: 'EMİN KURT - MESUT GÜVENBAŞ', price: '64₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FBirinciDünyaSavaşındaİstanbulaYapılanHavaSaldırıları.jpg?alt=media&token=7ab943d6-e322-4d8e-86b6-6f9f9bafa012' },
+  { id: 4, name: 'DENİZLER ALTINDA YİRMİ BİN FERSAH', author: 'Jules Verne', price: '70₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FDenizlerAltındaYirmiBinFersah.jpg?alt=media&token=79394dce-68e8-4e44-8dfa-89fef9552dd4' },
+  { id: 5, name: 'GÖNÜL SOHBETLERİ GÜLDESTESİ IV', author: 'FEYZİ HALICI, H. YURDABAK, A. SATOĞLU', price: '5₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FGönülSohbetleri.jpg?alt=media&token=5405b291-8104-4453-ba30-8986bbea29c6' },
+  { id: 6, name: 'Hükümdar ve Siyaset Kitabı', author: 'İbn Abdirabbih', price: '20₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FHükümdarVeSiyaset.jpg?alt=media&token=34e177a0-485e-4519-8ae8-a50ddb6974db' },
+  { id: 7, name: 'SAKIN BÜYÜME ÇOCUK', author: 'MUHANMET RECEPARAR', price: '40₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FSakınBüyümeÇocuk.jpg?alt=media&token=b0a4c968-8301-4868-8a95-de5aec1fd8fa' },
+  { id: 8, name: 'TARİHİ GERÇEKLER IŞIĞINDA BELGELERLE MUSTAFA KEMAL ATATÜRK', author: 'YUSUF KOÇ - ALİ KOÇ', price: '37₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FTarihiGerçeklerIşığındaMustafaKemalAtatürk.jpg?alt=media&token=4acb074e-94e5-432a-9fd4-09708e34be14' },
+  { id: 9, name: 'THE ICE ROSE', author: 'EUROPE AFS', price: '14₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FTheIceRose.jpg?alt=media&token=52a97a54-3451-4e8d-8536-a0c5b7d5a583' },
+  { id: 10, name: 'TÜRKİYE TÜRKÇESİ GRAMERİ ŞEKİL BİLGİSİ ', author: 'ZEYNEP KORKMAZ', price: '65₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FTürkiyeTürkçesiGrameriŞekilBilgisi.jpg?alt=media&token=57ba31c0-0e98-4cc9-84f4-2bae1a54e8a7' },
+  { id: 11, name: 'Yalnız Adamın Hayalleri', author: 'J.J RUSSEAU', price: '15₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FYalnızAdamınHayalleri.jpg?alt=media&token=66cbd1c3-d6bc-427b-80b9-4b2c72679526' },
+  { id: 12, name: 'YAZILAR YAZGILAR GİBİDİR SİLİNMEZ', author: 'TÜRKER GÖKSEL', price: '4,50₺', image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FYazılarYazgılarGibidirSilinmez.jpg?alt=media&token=f705acfd-5639-4f24-a634-aa77a549522b' }
 ])
 
 const truncatedTitle = (title: string) => {

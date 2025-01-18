@@ -3,34 +3,107 @@
     <Header />
     
     <div class="book-detail-container">
+      <div class="breadcrumb">
+        <NuxtLink to="/">Ana Sayfa</NuxtLink> >
+        <span>{{ book.name }}</span>
+      </div>
+
       <div class="book-content">
-        <div class="book-header">
-          <div class="book-image">
+        <div class="book-layout">
+          <!-- Sol Sütun: Kitap Görseli -->
+          <div class="book-image-column">
             <img :src="book.image" :alt="book.name" />
           </div>
-          <div class="book-info">
+
+          <!-- Orta Sütun: Kitap Bilgileri -->
+          <div class="book-info-column">
             <h1>{{ book.name }}</h1>
             <div class="author">{{ book.author }}</div>
             <div class="price">{{ book.price }}</div>
-            <div class="product-info">
-              <div class="info-item"><strong>Yayın Yeri:</strong> {{ book.publishPlace }}</div>
-              <div class="info-item"><strong>Yayınevi:</strong> {{ book.publisher }}</div>
-              <div class="info-item"><strong>Dili:</strong> {{ book.language }}</div>
-              <div class="info-item"><strong>Cildi:</strong> {{ book.cover }}</div>
-              <div class="info-item"><strong>ISBN:</strong> {{ book.isbn }}</div>
-              <div class="info-item"><strong>Özellik:</strong> {{ book.feature }}</div>
-              <div class="info-item"><strong>Durum:</strong> {{ book.condition }}</div>
-              <div class="info-item"><strong>Kargo:</strong> {{ book.shipping }}</div>
+            
+            <div class="info-grid">
+              <div class="info-row">
+                <div class="info-group">
+                  <div class="info-item">
+                    <span class="info-label">Yayın Yeri:</span>
+                    <span class="info-value">{{ book.publishPlace }}</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Yayınevi:</span>
+                    <span class="info-value">{{ book.publisher }}</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Dili:</span>
+                    <span class="info-value">{{ book.language }}</span>
+                  </div>
+                </div>
+
+                <div class="info-group">
+                  <div class="info-item">
+                    <span class="info-label">Cildi:</span>
+                    <span class="info-value">{{ book.cover }}</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">ISBN:</span>
+                    <span class="info-value">{{ book.isbn }}</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Özellik:</span>
+                    <span class="info-value">{{ book.feature }}</span>
+                  </div>
+                </div>
+
+                <div class="info-group">
+                  <div class="info-item">
+                    <span class="info-label">Durum:</span>
+                    <span class="info-value">{{ book.condition }}</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Kargo:</span>
+                    <span class="info-value">{{ book.shipping }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div class="buttons">
-              <button 
-                class="add-to-cart" 
-                @click="addToCart"
-                :disabled="isAddedToCart"
-              >
+              <button class="add-to-cart" @click="addToCart" :disabled="isAddedToCart">
                 {{ isAddedToCart ? 'Sepetinize Eklendi' : 'Sepete Ekle' }}
               </button>
-              <button class="ask-question">Soru Sor</button>
+              <button class="ask-question">Satıcıya Soru Sor</button>
+            </div>
+          </div>
+
+          <!-- Sağ Sütun: Satıcı Bilgileri -->
+          <div class="seller-info-column">
+            <div class="seller-box">
+              <h3>{{ book.seller }}</h3>
+              <div class="seller-stats">
+                <span>316 işlemde %100 başarı</span>
+              </div>
+
+              <div class="shipping-info">
+                <p>{{ book.seller }} tüm Türkiye'ye</p>
+                <p>Hepsijet Kargo & NadirKitap anlaşması ile</p>
+                <p>gönderim yapmaktadır.</p>
+                
+                <div class="shipping-prices">
+                  <p>Tek kitap kargo ücreti: <strong>79.00 TL</strong> (KDV dahil)</p>
+                  <p>2 ve daha fazla kitap: <strong>89.00 TL</strong> (Adet limiti olmaksızın, KDV dahil)</p>
+                </div>
+
+                <div class="free-shipping-info">
+                  <p>{{ book.seller }} kendi ürünlerinden yapılan</p>
+                  <p><strong>750 TL ve üzeri</strong> yurtiçi alımlarda</p>
+                  <p>kargo ücretini karşılamaktadır.</p>
+                </div>
+              </div>
+
+              <div class="seller-links">
+                <a href="#" class="seller-link">Tüm Kitaplarına Gözat</a>
+                <a href="#" class="seller-link">Sanat & Koleksiyon</a>
+                <a href="#" class="seller-link">Hakkındaki Yorumlar</a>
+              </div>
             </div>
           </div>
         </div>
@@ -64,13 +137,13 @@ const bookDetails = {
     name: 'Avrasyada Şamanlar',
     author: 'MIHALY HOPPAL',
     price: '90,00 ₺',
-    image: '/images/books/AvrasyadaŞamanlar.jpg',
+    image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FAvrasyadaŞamanlar.jpg?alt=media&token=0b3998f4-1960-4020-85df-a744f1d899c6',
     publishPlace: 'İSTANBUL',
-    publisher: 'Yapı Kredi Yayınları, 2023',
+    publisher: 'Yapı Kredi Yayınları',
     language: 'Türkçe',
     cover: 'Karton Kapak',
-    isbn: '9789750848476',
-    feature: 'Birinci Baskı',
+    isbn: '9789750852459',
+    feature: 'İmzalı Özel Baskı',
     condition: 'Yeni',
     shipping: 'Alıcıya Ait'
   },
@@ -79,30 +152,30 @@ const bookDetails = {
     name: 'Bilişsel Davranış Terapisinde Bilinçli Uygulama',
     author: 'James F. Boswell',
     price: '459₺',
-    image: '/images/books/BilişselDavranışlarTerapisindeBilinçliUygulama.jpg',
-    publishPlace: 'ANKARA',
-    publisher: 'Nobel Akademik, 2022',
+    image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FBilişselDavranışlarTerapisindeBilinçliUygulama.jpg?alt=media&token=e8952a31-7223-416e-9d2c-7650ca20e4ac',
+    publishPlace: 'İSTANBUL',
+    publisher: 'Sola Unitas',
     language: 'Türkçe',
     cover: 'Karton Kapak',
-    isbn: '9786257456982',
-    feature: 'İkinci Baskı',
+    isbn: '9789750852460',
+    feature: 'Özel Baskı',
     condition: 'Yeni',
-    shipping: 'Alıcıya Ait'
+    shipping: 'Ücretsiz Kargo'
   },
   3: {
     id: 3,
     name: "BİRİNCİ DÜNYA SAVAŞI'NDA İSTANBUL'A YAPILAN HAVA SALDIRILARI",
     author: 'EMİN KURT - MESUT GÜVENBAŞ',
     price: '64₺',
-    image: '/images/books/BirinciDünyaSavaşındaİstanbulaYapılanHavaSaldırıları.jpg',
+    image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FBirinciDünyaSavaşındaİstanbulaYapılanHavaSaldırıları.jpg?alt=media&token=7ab943d6-e322-4d8e-86b6-6f9f9bafa012',
     publishPlace: 'İSTANBUL',
-    publisher: 'Türk Tarih Kurumu, 2023',
+    publisher: 'İş Bankası Kültür Yayınları',
     language: 'Türkçe',
     cover: 'Karton Kapak',
-    isbn: '9789751636355',
-    feature: 'Birinci Baskı',
+    isbn: '9789750852461',
+    feature: 'Özel Baskı',
     condition: 'Yeni',
-    shipping: 'Alıcıya Ait'
+    shipping: 'Ücretsiz Kargo'
   },
   4: {
     id: 4,
@@ -229,13 +302,13 @@ const bookDetails = {
     name: 'YAZILAR YAZGILAR GİBİDİR SİLİNMEZ',
     author: 'TÜRKER GÖKSEL',
     price: '4,50₺',
-    image: '/images/books/YazılarYazgılarGibidirSilinmez.jpg',
+    image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FYazılarYazgılarGibidirSilinmez.jpg?alt=media&token=f705acfd-5639-4f24-a634-aa77a549522b',
     publishPlace: 'İSTANBUL',
-    publisher: 'Yapı Kredi Yayınları, 2023',
+    publisher: 'Yapı Kredi Yayınları',
     language: 'Türkçe',
     cover: 'Karton Kapak',
-    isbn: '9789750852459',
-    feature: 'İmzalı Özel Baskı',
+    isbn: '9789750852470',
+    feature: 'Özel Baskı',
     condition: 'Yeni',
     shipping: 'Alıcıya Ait'
   }
@@ -255,10 +328,12 @@ onMounted(() => {
 const addToCart = () => {
   if (book.value) {
     cartStore.addItemToCart({
+      id: book.value.id,
       title: book.value.name,
       price: book.value.price,
       seller: book.value.publisher || 'Belirtilmemiş',
-      image: book.value.image
+      image: book.value.image,
+      quantity: 1
     })
     isAddedToCart.value = true
   }
@@ -282,31 +357,34 @@ const addToCart = () => {
 
 .book-content {
   background: white;
+  padding: 20px;
   border-radius: 8px;
-  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.book-header {
-  display: flex;
-  gap: 40px;
+.book-layout {
+  display: grid;
+  grid-template-columns: 300px minmax(400px, 1fr) 300px;
+  gap: 30px;
+  padding: 20px;
 }
 
-.book-image {
+.book-image-column {
   flex: 0 0 300px;
 }
 
-.book-image img {
+.book-image-column img {
   width: 100%;
   height: auto;
   border: 1px solid #eee;
   padding: 10px;
 }
 
-.book-info {
+.book-info-column {
   flex: 1;
 }
 
-.book-info h1 {
+.book-info-column h1 {
   color: #146eb2;
   font-size: 24px;
   margin-bottom: 15px;
@@ -325,16 +403,34 @@ const addToCart = () => {
   margin-bottom: 30px;
 }
 
-.product-info {
+.info-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin-bottom: 30px;
 }
 
+.info-row {
+  display: flex;
+  gap: 15px;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+}
+
 .info-item {
   font-size: 14px;
   color: #333;
+}
+
+.info-label {
+  font-weight: bold;
+}
+
+.info-value {
+  margin-left: 10px;
 }
 
 .buttons {
@@ -366,5 +462,56 @@ button {
   color: #666;
   cursor: default;
   border: 1px solid #ddd;
+}
+
+.seller-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.seller-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.seller-box h3 {
+  color: #146eb2;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.seller-stats {
+  color: #666;
+  font-size: 16px;
+}
+
+.shipping-info {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.shipping-prices {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.free-shipping-info {
+  color: #666;
+  font-size: 16px;
+}
+
+.seller-links {
+  display: flex;
+  gap: 10px;
+}
+
+.seller-link {
+  color: #146eb2;
+  text-decoration: none;
 }
 </style> 
