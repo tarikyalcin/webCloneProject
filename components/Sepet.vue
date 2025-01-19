@@ -124,7 +124,12 @@ const updateQuantity = (item) => {
 }
 
 const removeFromCart = (index) => {
-  cartStore.removeItemFromCart(index)
+  const itemToRemove = cartItems.value[index]
+  if (itemToRemove) {
+    if (confirm(`"${itemToRemove.title}" sepetten çıkarılsın mı?`)) {
+      cartStore.removeItemFromCart(itemToRemove.id)
+    }
+  }
 }
 
 const goToHomePage = () => {

@@ -182,29 +182,32 @@ const bookDetails = {
     name: 'DENİZLER ALTINDA YİRMİ BİN FERSAH',
     author: 'Jules Verne',
     price: '70₺',
-    image: '/images/books/DenizlerAltındaYirmiBinFersah.jpg',
-    publishPlace: 'İSTANBUL',
-    publisher: 'İş Bankası Kültür Yayınları, 2023',
+    publisher: 'Klasik Yayınları',
+    publishPlace: 'İstanbul',
     language: 'Türkçe',
     cover: 'Karton Kapak',
-    isbn: '9789944884235',
-    feature: 'Özel Baskı',
+    isbn: '9789754589632',
     condition: 'Yeni',
-    shipping: 'Alıcıya Ait'
+    image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FDenizlerAltındaYirmiBinFersah.jpg?alt=media&token=79394dce-68e8-4e44-8dfa-89fef9552dd4',
+    seller: 'Klasik Kitapevi',
+    sellerStats: '1250',
+    shipping: 'Ücretsiz Kargo'
   },
   5: {
     id: 5,
     name: 'GÖNÜL SOHBETLERİ GÜLDESTESİ IV',
     author: 'FEYZİ HALICI, H. YURDABAK, A. SATOĞLU',
     price: '5₺',
-    image: '/images/books/GönülSohbetleri.jpg',
-    publishPlace: 'KONYA',
-    publisher: 'Selçuk Üniversitesi Yayınları, 2021',
+    image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FGönülSohbetleri.jpg?alt=media&token=5405b291-8104-4453-ba30-8986bbea29c6',
+    publishPlace: 'İSTANBUL',
+    publisher: 'Türk Edebiyatı Vakfı Yayınları',
     language: 'Türkçe',
     cover: 'Karton Kapak',
-    isbn: '9789751638523',
-    feature: 'Sınırlı Sayıda',
+    isbn: '9789754589123',
+    feature: 'Özel Baskı',
     condition: 'Yeni',
+    seller: 'Türk Edebiyatı Vakfı',
+    sellerStats: '850',
     shipping: 'Alıcıya Ait'
   },
   6: {
@@ -212,14 +215,16 @@ const bookDetails = {
     name: 'Hükümdar ve Siyaset Kitabı',
     author: 'İbn Abdirabbih',
     price: '20₺',
-    image: '/images/books/HükümdarVeSiyaset.jpg',
+    image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FHükümdarVeSiyaset.jpg?alt=media&token=34e177a0-485e-4519-8ae8-a50ddb6974db',
     publishPlace: 'İSTANBUL',
-    publisher: 'Klasik Yayınları, 2022',
+    publisher: 'Klasik Yayınları',
     language: 'Türkçe',
     cover: 'Karton Kapak',
     isbn: '9789759114862',
     feature: 'Çeviri Eser',
     condition: 'Yeni',
+    seller: 'Klasik Kitapevi',
+    sellerStats: '750',
     shipping: 'Alıcıya Ait'
   },
   7: {
@@ -227,14 +232,16 @@ const bookDetails = {
     name: 'SAKIN BÜYÜME ÇOCUK',
     author: 'MUHANMET RECEPARAR',
     price: '40₺',
-    image: '/images/books/SakınBüyümeÇocuk.jpg',
+    image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FSakınBüyümeÇocuk.jpg?alt=media&token=b0a4c968-8301-4868-8a95-de5aec1fd8fa',
     publishPlace: 'İSTANBUL',
-    publisher: 'Can Yayınları, 2023',
+    publisher: 'Yediveren Yayınları',
     language: 'Türkçe',
     cover: 'Karton Kapak',
-    isbn: '9789750738524',
+    isbn: '9786057428776',
     feature: 'İlk Baskı',
     condition: 'Yeni',
+    seller: 'Yediveren Kitabevi',
+    sellerStats: '920',
     shipping: 'Alıcıya Ait'
   },
   8: {
@@ -242,14 +249,16 @@ const bookDetails = {
     name: 'TARİHİ GERÇEKLER IŞIĞINDA BELGELERLE MUSTAFA KEMAL ATATÜRK',
     author: 'YUSUF KOÇ - ALİ KOÇ',
     price: '37₺',
-    image: '/images/books/TarihiGerçeklerIşığındaMustafaKemalAtatürk.jpg',
-    publishPlace: 'ANKARA',
-    publisher: 'Türk Tarih Kurumu, 2022',
+    image: 'https://firebasestorage.googleapis.com/v0/b/webfinal-714a8.firebasestorage.app/o/books%2FTarihiGerçeklerIşığındaMustafaKemalAtatürk.jpg?alt=media&token=4acb074e-94e5-432a-9fd4-09708e34be14',
+    publishPlace: 'İSTANBUL',
+    publisher: 'Türk Tarih Kurumu',
     language: 'Türkçe',
     cover: 'Karton Kapak',
-    isbn: '9789751627420',
-    feature: 'Belgesel Nitelikli',
+    isbn: '9789751633057',
+    feature: 'Araştırma-İnceleme',
     condition: 'Yeni',
+    seller: 'Türk Tarih Kurumu Yayınevi',
+    sellerStats: '980',
     shipping: 'Alıcıya Ait'
   },
   9: {
@@ -315,12 +324,11 @@ const bookDetails = {
 }
 
 onMounted(() => {
-  console.log('Route params:', route.params) // Debug için
-  const bookId = route.params.id
+  const bookId = parseInt(String(route.params.id))
   book.value = bookDetails[bookId]
   
   if (!book.value) {
-    console.error('Book not found:', bookId) // Debug için
+    console.error('Kitap bulunamadı:', bookId)
     router.push('/')
   }
 })
