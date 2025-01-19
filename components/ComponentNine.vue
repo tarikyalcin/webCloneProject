@@ -17,7 +17,7 @@
           <h3 class="item-title">{{ item.title }}</h3>
           <p class="item-seller">Satıcı: {{ item.seller }}</p>
           <p class="item-price">{{ item.price }}</p>
-          <button class="remove-button" @click="removeFromCart(index)">Sepetten Çıkar</button>
+          <button class="remove-button" @click="removeFromCart(item)">Sepetten Çıkar</button>
         </div>
       </div>
       <div class="sepet-toplam">
@@ -44,8 +44,10 @@ const goToHomePage = () => {
   router.push('/')
 }
 
-const removeFromCart = (index) => {
-  cartStore.removeItemFromCart(index)
+const removeFromCart = (item) => {
+  if (confirm(`"${item.title}" sepetten çıkarılsın mı?`)) {
+    cartStore.removeItemFromCart(item.id)
+  }
 }
 
 const calculateTotal = () => {

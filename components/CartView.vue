@@ -17,7 +17,7 @@
             <button @click="increaseQuantity(item)">+</button>
           </div>
         </div>
-        <button @click="cartStore.removeItemFromCart(item.id)" class="remove-button">
+        <button @click="removeFromCart(item)" class="remove-button">
           Kaldır
         </button>
       </div>
@@ -51,5 +51,11 @@ const decreaseQuantity = (item) => {
 const checkout = () => {
   // Ödeme işlemleri burada yapılacak
   alert('Ödeme işlemi başlatılıyor...')
+}
+
+const removeFromCart = (item) => {
+  if (confirm(`"${item.title}" sepetten çıkarılsın mı?`)) {
+    cartStore.removeItemFromCart(item.id)
+  }
 }
 </script> 
